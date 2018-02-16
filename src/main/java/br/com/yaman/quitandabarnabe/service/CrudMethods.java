@@ -1,5 +1,6 @@
 package br.com.yaman.quitandabarnabe.service;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -17,5 +18,7 @@ public interface CrudMethods<T> {
 	Optional<T> update(Long id, T t);
 
 	void delete(Long id);
+	
+	List<T> findAll ();
 
 }

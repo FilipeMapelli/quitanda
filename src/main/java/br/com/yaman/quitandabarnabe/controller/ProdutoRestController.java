@@ -1,5 +1,6 @@
 package br.com.yaman.quitandabarnabe.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -92,6 +93,17 @@ public class ProdutoRestController {
 		
 		produtoService.delete(id);
 		return new ResponseEntity<Produto>(HttpStatus.NO_CONTENT);
+	}
+	
+	/**
+	 * Retorna a lista de todos produtos
+	 * 
+	 * @return ResponseEntity<List<Produto>>
+	 */
+	@GetMapping
+	public ResponseEntity<List<Produto>> findAll () {
+		
+		return ResponseEntity.ok().body(produtoService.findAll());
 	}
 
 }

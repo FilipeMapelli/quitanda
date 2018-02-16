@@ -1,5 +1,6 @@
 package br.com.yaman.quitandabarnabe.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import br.com.yaman.quitandabarnabe.repository.JPACustomRepository;
@@ -44,6 +45,11 @@ public class CrudMethodsImpl<T> implements CrudMethods<T> {
 	public void delete(Long id) {
 		repository.delete(id);
 
+	}
+
+	@Override
+	public List<T> findAll() {
+		return repository.findAll();
 	}
 
 }
