@@ -70,6 +70,8 @@ public class ProdutoRestController {
 	@PutMapping("/{id}")
 	public ResponseEntity<Produto> update (@PathVariable Long id, @RequestBody Produto produto) {
 		
+		produto.setId(id);
+		
 		Optional<Produto> prod = produtoService.update(id, produto);
 		
 		if (prod.isPresent()) {

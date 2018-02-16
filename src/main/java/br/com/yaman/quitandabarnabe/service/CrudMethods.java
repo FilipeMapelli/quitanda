@@ -2,6 +2,12 @@ package br.com.yaman.quitandabarnabe.service;
 
 import java.util.Optional;
 
+/**
+ * 
+ * @author filipe
+ *
+ * @param <T>
+ */
 public interface CrudMethods<T> {
 
 	T create(T t);
