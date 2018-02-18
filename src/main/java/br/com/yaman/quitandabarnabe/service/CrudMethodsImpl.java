@@ -30,15 +30,10 @@ public class CrudMethodsImpl<T> implements CrudMethods<T> {
 	}
 
 	@Override
-	public Optional<T> update(Long id, T t) {
-		Optional<T> optional = Optional.of(repository.findOne(id));
-
-		if (optional.isPresent()) {
-			return Optional.of(repository.save(t));
-		}
+	public T update(T t) {
 		
-		return optional;
-		
+		return repository.save(t);
+	
 	}
 
 	@Override

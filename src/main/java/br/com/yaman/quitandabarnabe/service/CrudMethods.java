@@ -15,7 +15,7 @@ public interface CrudMethods<T> {
 
 	Optional<T> read(Long id);
 
-	Optional<T> update(Long id, T t);
+	T update(T t);
 
 	void delete(Long id);
 	
