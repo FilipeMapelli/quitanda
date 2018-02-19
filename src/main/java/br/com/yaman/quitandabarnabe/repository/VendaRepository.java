@@ -2,7 +2,7 @@ package br.com.yaman.quitandabarnabe.repository;
 
 import org.springframework.stereotype.Repository;
 
-import br.com.yaman.quitandabarnabe.model.TipoProduto;
+import br.com.yaman.quitandabarnabe.model.Venda;
 
 /**
  * 
@@ -11,6 +11,6 @@ import br.com.yaman.quitandabarnabe.model.TipoProduto;
  *
  */
 @Repository
-public interface TipoProdutoRepository extends JPACustomRepository<TipoProduto>{
+public interface VendaRepository extends JPACustomRepository<Venda> {
 
 }
