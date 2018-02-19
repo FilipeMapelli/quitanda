@@ -2,7 +2,11 @@ package br.com.yaman.quitandabarnabe.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.http.ResponseEntity;
+
+import br.com.yaman.quitandabarnabe.response.Response;
 
 /**
  * 
@@ -13,14 +17,14 @@ import org.springframework.http.ResponseEntity;
  */
 public interface ApiMethods<T> {
 	
-	ResponseEntity<T> post(T t);
+	ResponseEntity<Response<T>> post(T t, HttpServletRequest request);
 	
-	ResponseEntity<T> get(Long id);
+	ResponseEntity<Response<T>> get(Long id);
 	
-	ResponseEntity<List<T>> get();
+	ResponseEntity<Response<List<T>>> get();
 	
 	ResponseEntity<T> delete(Long id);
 	
-	ResponseEntity<T> put(T t);
+	ResponseEntity<Response<T>> put(T t);
 	
 }

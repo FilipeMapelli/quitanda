@@ -3,7 +3,6 @@ package br.com.yaman.quitandabarnabe.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -15,7 +14,6 @@ public class Produto extends GenericId {
 	private String nome;
 
 	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
-	@JoinColumn(name = "COD_TIPO_PRODUTO")
 	private TipoProduto tipoProduto;
 
 	@Column(name = "DESCRICAO")
