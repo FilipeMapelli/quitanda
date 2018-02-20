@@ -13,7 +13,7 @@ public class Produto extends GenericId {
 	@Column(name = "NOME")
 	private String nome;
 
-	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
+	@ManyToOne(cascade = CascadeType.MERGE)
 	private TipoProduto tipoProduto;
 
 	@Column(name = "DESCRICAO")

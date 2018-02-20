@@ -1,15 +1,17 @@
 package br.com.yaman.quitandabarnabe.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ESTOQUE")
 public class Estoque extends GenericId {
 
-	@ManyToOne
+	@ManyToOne(cascade = { CascadeType.MERGE, CascadeType.PERSIST })
 	private Produto produto;
 
 	@Column(name = "QTD_DISPONIVEL")
@@ -42,4 +44,8 @@ public class Estoque extends GenericId {
 		this.quantidadeTotal = quantidadeTotal;
 	}
 
+	@PrePersist
+	public void prePersist() {
+		this.quantidadeDisponivel = this.quantidadeTotal;
+	}
 }

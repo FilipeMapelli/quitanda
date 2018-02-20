@@ -20,6 +20,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.yaman.quitandabarnabe.response.Response;
 import br.com.yaman.quitandabarnabe.service.CrudMethods;
+import io.swagger.annotations.ApiOperation;
 
 /**
  * 
@@ -36,6 +37,7 @@ public class ApiMethodsImpl<T> implements ApiMethods<T> {
 		this.service = service;
 	}
 
+	@ApiOperation(value = "Cria um novo recurso")
 	@PostMapping
 	public ResponseEntity<Response<T>> post(@RequestBody T t, HttpServletRequest request) {
 
@@ -62,6 +64,7 @@ public class ApiMethodsImpl<T> implements ApiMethods<T> {
 
 	}
 
+	@ApiOperation(value = "Acessa os dados do recurso")
 	@GetMapping("/{id}")
 	public ResponseEntity<Response<T>> get(@PathVariable Long id) {
 
@@ -75,6 +78,7 @@ public class ApiMethodsImpl<T> implements ApiMethods<T> {
 		return new ResponseEntity<Response<T>>(HttpStatus.NOT_FOUND);
 	}
 
+	@ApiOperation(value = "Atualiza o recurso")
 	@PutMapping()
 	public ResponseEntity<Response<T>> put(@RequestBody T t) {
 
@@ -84,6 +88,7 @@ public class ApiMethodsImpl<T> implements ApiMethods<T> {
 		return ResponseEntity.ok().body(response);
 	}
 
+	@ApiOperation(value = "deleta o recurso")
 	@DeleteMapping("{id}")
 	public ResponseEntity<T> delete(@PathVariable Long id) {
 
@@ -94,6 +99,7 @@ public class ApiMethodsImpl<T> implements ApiMethods<T> {
 		return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 	}
 
+	@ApiOperation(value = "Acessa a lista com os dados de todos os recursos")
 	@GetMapping
 	public ResponseEntity<Response<List<T>>> get() {
 		Response<List<T>> response = new Response<>();
