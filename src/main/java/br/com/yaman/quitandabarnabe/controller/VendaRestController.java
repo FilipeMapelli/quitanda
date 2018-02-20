@@ -4,22 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.yaman.quitandabarnabe.model.Produto;
+import br.com.yaman.quitandabarnabe.model.Venda;
 import br.com.yaman.quitandabarnabe.service.CrudMethods;
 
 /**
- * RestController referente ao produto.
  * 
  * @author Filipe Mapelli Siqueira
- * @since 2018-02-18
+ * @since 2018-02-19
  *
  */
 @RestController
-@RequestMapping("produtos")
-public class ProdutoRestController extends ApiMethodsImpl<Produto> {
+@RequestMapping("vendas")
+public class VendaRestController extends ApiMethodsImpl<Venda>{
 
 	@Autowired
-	public ProdutoRestController(CrudMethods<Produto> service) {
+	public VendaRestController(CrudMethods<Venda> service) {
 		super(service);
 	}
 

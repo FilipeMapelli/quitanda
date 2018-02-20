@@ -12,13 +12,17 @@ import br.com.yaman.quitandabarnabe.repository.JPACustomRepository;
  * @param <T>
  */
 public class CrudMethodsImpl<T> implements CrudMethods<T> {
-	
+
 	private JPACustomRepository<T> repository;
-	
+
 	public CrudMethodsImpl(JPACustomRepository<T> repository) {
 		this.repository = repository;
 	}
-	
+
+	public JPACustomRepository<T> getRepository() {
+		return repository;
+	}
+
 	@Override
 	public T create(T t) {
 		return repository.save(t);
@@ -31,9 +35,9 @@ public class CrudMethodsImpl<T> implements CrudMethods<T> {
 
 	@Override
 	public T update(T t) {
-		
+
 		return repository.save(t);
-	
+
 	}
 
 	@Override
